@@ -26,12 +26,32 @@
     button:hover {
       background-color: #45a049;
     }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .toast.show {
+      display: block;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
   <h3>HTML Content Downloader</h3>
   <input type="text" id="elementId" placeholder="Enter element ID">
   <button id="downloadBtn">Download HTML</button>
+  <button id="copyBtn" style="background-color: #2196F3; margin-top: 5px;">Copy to Clipboard</button>
+  <button id="downloadFullBtn" style="background-color: #9C27B0; margin-top: 5px;">Download Full Page</button>
+  <div id="toast" class="toast"></div>
   <script src="popup.js"></script>
 </body>
 </html>

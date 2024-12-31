@@ -8,5 +8,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 
     sendResponse({ html: element.outerHTML });
+  } else if (request.action === 'getFullHTML') {
+    // Get the full HTML including DOCTYPE
+    const fullHTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    sendResponse({ html: fullHTML });
   }
 });

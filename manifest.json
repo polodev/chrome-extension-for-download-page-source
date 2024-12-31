@@ -5,7 +5,9 @@
   "description": "Download HTML content by element ID",
   "permissions": [
     "activeTab",
-    "downloads"
+    "downloads",
+    "clipboardWrite",
+    "storage"
   ],
   "action": {
     "default_popup": "popup.html"
